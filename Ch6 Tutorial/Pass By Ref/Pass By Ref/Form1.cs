@@ -18,15 +18,30 @@ namespace Pass_By_Ref
         }
 
         // The SetToZero method accepts an int argument
-        // by reference and sets it to zero.
-      
+        // by reference and sets it to zero 
 
         private void goButton_Click(object sender, EventArgs e)
         {
             // Declare some local int variables.
-
+            int x = 100, y = 200, z = 300;
             // Display the values in those variables.
-           
+            outputListBox.Items.Add("x = "+ x);
+            outputListBox.Items.Add("y = "+ y);
+            outputListBox.Items.Add("z = "+ z);
+
+            outputListBox.Items.Add("--------------------------------------------");
+            SetToZero(ref x,ref y,ref z); //call by value
+
+            outputListBox.Items.Add("x = " + x);
+            outputListBox.Items.Add("y = " + y);
+            outputListBox.Items.Add("z = " + z);
+        }
+
+        public void SetToZero(ref int x,ref int y,ref int z)
+        {
+            x = 0;
+            y = 0;
+            z = 0;
         }
 
         private void exitButton_Click(object sender, EventArgs e)
