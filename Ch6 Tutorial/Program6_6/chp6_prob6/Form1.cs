@@ -58,9 +58,9 @@ namespace chp6_prob6
 
             if (InputIsValid(ref days,ref fb,ref sb,ref cb, ref mb))
             {
-                stayCharge = CaleStayCharges(days);
-                miscCharge = CaleMisCharges(fb, sb, cb, mb);
-                totalCharge = CaleTotalCharges(stayCharge, miscCharge);
+                stayCharge = CaleStayCharges(days); //計算住宿費
+                miscCharge = CaleMisCharges(fb, sb, cb, mb); //計算其他花費
+                totalCharge = CaleTotalCharges(stayCharge, miscCharge); //計算總花費
                 MessageBox.Show($"總花費: {totalCharge}");
             }
         }
