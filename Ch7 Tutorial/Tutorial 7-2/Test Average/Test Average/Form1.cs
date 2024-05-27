@@ -13,7 +13,7 @@ namespace Test_Average
 {
     public partial class Form1 : Form
     {
-        private const int SIZE = 40;
+        private const int SIZE = 5;
         public Form1()
         {
             InitializeComponent();
@@ -25,6 +25,7 @@ namespace Test_Average
             int highestScore = 0;
             int lowestScore = 0;
             double average = 0.0;
+            int median = 0;
             GetScoresFromFile(scores);
 
             foreach (int value in scores)
@@ -40,6 +41,16 @@ namespace Test_Average
 
             average = Average(scores);
             averageScoreLabel.Text = average.ToString();
+
+            median = Median(scores);
+            medianScoreLabel.Text = median.ToString();
+        }
+
+        private int Median(int[] scores)
+        {
+            Array.Sort(scores);
+            return scores[scores.Length / 2];
+            
         }
 
         private double Average(int[] scores)
